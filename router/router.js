@@ -3,6 +3,7 @@ import { Combination } from '../controllers/combination.js';
 import { Fibonacci } from '../controllers/fibonacci.js';
 import { createCompanies, getCompanies, getEmployeesByCompanyId, setActive, updateEmployees } from '../controllers/companies.js'
 import { getEmployeesById, addEmployees, deleteEmployees } from '../controllers/employees.js';
+import { getCountry } from '../controllers/country.js';
 const router = express.Router();
 
 router.get('/', () => {
@@ -21,5 +22,7 @@ router.put('/api/companies/:company_id/employees/:employee_id', updateEmployees)
 router.get('/api/employees/:id', getEmployeesById)
 router.post('/api/companies/:id/employees', addEmployees)
 router.delete('/api/employees/:id', deleteEmployees)
+
+router.get('/api/countries', getCountry)
 
 export default router;
